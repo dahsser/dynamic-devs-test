@@ -10,6 +10,3 @@ export const getLocation = (distances: number[]): coordinate => {
   };
 };
 
-export const getMessage = (messages: string[]): string => {
-  return "this is a message";
-};
