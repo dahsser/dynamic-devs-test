@@ -6,4 +6,5 @@ router.get("/ping", async (req: Request, res: Response) => {
   res.send('pong');
 });
 
+router.post("")
 export default router;

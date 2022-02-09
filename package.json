@@ -10,6 +10,7 @@
     "gcp-build": "tsc -p ."
   },
   "devDependencies": {
+    "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/node": "^17.0.16",
     "@typescript-eslint/eslint-plugin": "^5.11.0",

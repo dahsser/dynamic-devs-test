@@ -1,6 +1,7 @@
 import express from "express";
 import routes from "./routes";
 import errors from "./middlewares/errors";
+import cors from 'cors';
 const port = Number(process.env.PORT) || 8080;
 
 const app = express();
