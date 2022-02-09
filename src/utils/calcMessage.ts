@@ -11,7 +11,7 @@ export const deleteDelay = (
       return m.length - firstNoEmptyIndex;
     })
   );
-  console.log("longestPossibleSize", longestPossibleSize);
+
   return messages.map((m) => {
     return m.slice(m.length - longestPossibleSize);
   });
@@ -22,9 +22,7 @@ export const getMessage = (messages: satelliteMessage[]): string => {
   let error = false;
   for (let i = 0; i < cleanedMessages[0].length && !error; i += 1) {
     let tempWord = "";
-    console.log("-----------");
     for (let j = 0; j < cleanedMessages.length; j += 1) {
-      console.log("tempWord", tempWord, "vs", cleanedMessages[j][i]);
       if (tempWord === "") {
         tempWord = cleanedMessages[j][i];
       } else if (
@@ -34,7 +32,6 @@ export const getMessage = (messages: satelliteMessage[]): string => {
         error = true; // Collision of words, maybe "message" vs "Message" not allowed for this case
       }
     }
-    console.log(error ? "Error!" : null);
     if (!error) {
       finalMessage.push(tempWord);
     }

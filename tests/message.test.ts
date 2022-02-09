@@ -8,7 +8,6 @@ describe("Message finding", () => {
       ["", "", "is", "", "message"],
     ];
     const withouDelay = deleteDelay(messages);
-    console.log("withouDelay", withouDelay);
     expect(withouDelay[0].length).toBe(4);
     expect(withouDelay[1].length).toBe(4);
     expect(withouDelay[2].length).toBe(4);
@@ -20,7 +19,6 @@ describe("Message finding", () => {
       ["", "", "", "", "message"],
     ];
     const withouDelay = deleteDelay(messages);
-    console.log("withouDelay", withouDelay);
     expect(withouDelay[0].length).toBe(4);
     expect(withouDelay[1].length).toBe(4);
     expect(withouDelay[2].length).toBe(4);

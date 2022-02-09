@@ -17,8 +17,10 @@ class Coordinate {
     );
   }
   static getDistance(coordA: Coordinate, coordB: Coordinate): number {
-    return Math.abs(
-      Math.pow(coordA.x - coordB.x, 2) + Math.pow(coordA.y - coordB.y, 2)
+    return Math.sqrt(
+      Math.abs(
+        Math.pow(coordA.x - coordB.x, 2) + Math.pow(coordA.y - coordB.y, 2)
+      )
     );
   }
 }

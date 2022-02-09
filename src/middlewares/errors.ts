@@ -1,6 +1,6 @@
 import { Response, NextFunction, Router, Request } from "express";
 import { Logger } from "../utils/Logger";
-
+import httpStatus from "http-status";
 const logger = new Logger("ErrorHandler");
 
 export default function handleErrors(app: Router) {
@@ -12,15 +12,15 @@ export default function handleErrors(app: Router) {
 
   // App Errors
   app.use(function (err: any, req: Request, res: Response, next: NextFunction) {
-    if (err.code) {
+    if (err.message in httpStatus) {
       let response: any = {
-        code: err.code,
-        description: err.systemMessage,
+        code: err.message,
+        description: httpStatus[err.message],
       };
       logger.debug("User Error", err);
-      res.status(err.code).json(response);
+      res.status(err.message).json(response);
     } else {
-      next(err);
+      return next(err);
     }
   });
 
