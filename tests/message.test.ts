@@ -25,7 +25,7 @@ describe("Message finding", () => {
     expect(withouDelay[1].length).toBe(4);
     expect(withouDelay[2].length).toBe(4);
   });
-  it("should find a message - basic", async () => {
+  it("should find a message - lvl 1", async () => {
     const messages = [
       ["this", "is", "a", "message"],
       ["this", "", "a", "message"],
@@ -34,7 +34,7 @@ describe("Message finding", () => {
     const finalMessage = getMessage(messages);
     expect(finalMessage).toBe("this is a message");
   });
-  it("should find a message", async () => {
+  it("should find a message - lvl 2", async () => {
     const messages = [
       ["", "", "", "this", "is", "a", "message"],
       ["this", "", "a", "message"],
@@ -44,7 +44,7 @@ describe("Message finding", () => {
     expect(finalMessage).toBe("this is a message");
   });
 
-  it("should find a message", async () => {
+  it("should find a message - lvl 3", async () => {
     const messages = [
       ["", "", "", "this", "is", "a", ""],
       ["", "is", "", "message"],
@@ -53,7 +53,7 @@ describe("Message finding", () => {
     const finalMessage = getMessage(messages);
     expect(finalMessage).toBe("this is a message");
   });
-  it("it should find a message", async () => {
+  it("it should find a message - lvl 3", async () => {
     const messages = [
       ["", "", "", "", "", "a", ""],
       ["", "is", "", "message"],
