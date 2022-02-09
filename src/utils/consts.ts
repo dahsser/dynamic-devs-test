@@ -10,4 +10,4 @@ export const SATELLITE_NAMES: { [key: string]: Coord } = {
   sato: SATELLITES.SATO,
 };
 
-export const EPSILON = 0.00001;
+export const EPSILON = 0.0001;

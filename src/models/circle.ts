@@ -56,6 +56,7 @@ export default class Circle {
       circles[0],
       circles[2]
     );
+
     if (
       coordinates1 === null ||
       coordinates2 === null ||
