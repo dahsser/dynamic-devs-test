@@ -3,7 +3,7 @@ Install dependencies
 $ yarn install
 ```
 
-Build Develop
+Run server in develop mode
 ```bash
 $ yarn dev
 ```
