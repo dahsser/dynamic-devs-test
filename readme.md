@@ -8,6 +8,10 @@ Run server in develop mode
 $ yarn dev
 ```
 
+Run tests
+```bash
+$ yarn test
+```
 
 Create documentation (Previously: install apidoc as a global package )
 ```bash
