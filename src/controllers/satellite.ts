@@ -6,6 +6,7 @@ import {
 } from "../service/satellite";
 import * as ValidationSatellite from "../validations/satellite";
 // Level 2
+
 export const CalculateResultFromPayload = (
   req: Request,
   res: Response,
