@@ -1,0 +1,23 @@
+image: gcr.io/google.com/cloudsdktool/cloud-sdk:alpine
+
+# install_node:
+#   stage: build
+#   script:
+#     - apk add --update nodejs npm
+
+deploy_development:
+  stage: deploy
+  environment: production
+  only:
+    - master
+  script:
+    - rm -f package-lock.json
+    - rm -f .env
+    # - cp $ENV_DEV_VARIABLES .env
+    # - cp $FIRESTORE_DEV_KEY firestore-key.json
+    - echo $GCP_DEV_SERVICE_ACCOUNT > /tmp/$CI_PIPELINE_ID.json
+    - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+    - gcloud builds submit --config cloudbuild.yaml . --project $GCP_DEV_PROJECT_ID --substitutions=SHORT_SHA=$CI_COMMIT_SHORT_SHA
+
+after_script:
+  - rm -f /tmp/$CI_PIPELINE_ID.json
